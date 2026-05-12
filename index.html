@@ -10,11 +10,13 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
         }
+
         header {
             background: #2d1b0e;
             color: #ffd700;
@@ -22,12 +24,15 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+
         header h1 {
             font-size: 2.5rem;
         }
+
         header p {
             color: #fff;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -36,12 +41,14 @@
             grid-template-columns: 2fr 1fr;
             gap: 20px;
         }
+
         .menu-section {
             background: white;
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+
         .cart-section {
             background: white;
             border-radius: 15px;
@@ -51,12 +58,14 @@
             position: sticky;
             top: 20px;
         }
+
         .menu-items {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
+
         .menu-card {
             background: #fff8f0;
             border-radius: 10px;
@@ -64,20 +73,33 @@
             border-left: 4px solid #ff6b35;
             transition: transform 0.2s;
         }
+
         .menu-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
+
+        .menu-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
         .menu-card h3 {
             color: #2d1b0e;
             font-size: 1.3rem;
+            margin-bottom: 5px;
         }
+
         .price {
             color: #ff6b35;
             font-size: 1.5rem;
             font-weight: bold;
             margin: 10px 0;
         }
+
         .add-btn {
             background: #2d1b0e;
             color: white;
@@ -89,23 +111,45 @@
             font-size: 1rem;
             transition: background 0.2s;
         }
+
         .add-btn:hover {
             background: #ff6b35;
         }
+
+        .delete-item {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 8px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .delete-item:hover {
+            background: #cc0000;
+        }
+
         .cart-item {
             display: flex;
             justify-content: space-between;
             padding: 10px 0;
             border-bottom: 1px solid #ddd;
         }
+
         .cart-item-details {
             flex: 2;
         }
+
         .cart-item-qty {
             display: flex;
             gap: 8px;
             align-items: center;
         }
+
         .qty-btn {
             background: #ddd;
             border: none;
@@ -114,7 +158,13 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
+            transition: background 0.2s;
         }
+
+        .qty-btn:hover {
+            background: #bbb;
+        }
+
         .remove-item {
             background: #ff4444;
             color: white;
@@ -124,6 +174,11 @@
             cursor: pointer;
             margin-left: 10px;
         }
+
+        .remove-item:hover {
+            background: #cc0000;
+        }
+
         .total {
             margin: 20px 0;
             font-size: 1.5rem;
@@ -132,16 +187,29 @@
             border-top: 2px solid #ddd;
             padding-top: 15px;
         }
+
         .order-form {
             margin-top: 20px;
         }
-        .order-form input, .order-form textarea {
+
+        .order-form input, 
+        .order-form textarea, 
+        .order-form select {
             width: 100%;
             padding: 10px;
             margin: 8px 0;
             border: 1px solid #ddd;
             border-radius: 8px;
+            font-size: 1rem;
         }
+
+        .order-form input:focus, 
+        .order-form textarea:focus, 
+        .order-form select:focus {
+            outline: none;
+            border-color: #ff6b35;
+        }
+
         .order-form button {
             width: 100%;
             background: #ff6b35;
@@ -152,22 +220,34 @@
             border-radius: 8px;
             cursor: pointer;
             margin-top: 10px;
+            transition: background 0.2s;
         }
+
+        .order-form button:hover {
+            background: #e55a2b;
+        }
+
         .admin-panel {
             margin-top: 20px;
             background: #f0f0f0;
             padding: 15px;
             border-radius: 10px;
         }
+
         .admin-input {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
+            margin-top: 10px;
         }
+
         .admin-input input {
             flex: 1;
             padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
+
         .admin-btn {
             background: #2d1b0e;
             color: white;
@@ -175,37 +255,32 @@
             padding: 8px 15px;
             border-radius: 5px;
             cursor: pointer;
+            transition: background 0.2s;
         }
-        .delete-item {
-            background: #ff4444;
-            color: white;
-            border: none;
-            padding: 2px 8px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-left: 10px;
-            font-size: 0.8rem;
+
+        .admin-btn:hover {
+            background: #ff6b35;
         }
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-        }
+
         .status {
             padding: 10px;
             margin: 10px 0;
             border-radius: 5px;
             display: none;
         }
+
         .status.success {
             background: #d4edda;
             color: #155724;
             display: block;
+            border: 1px solid #c3e6cb;
         }
+
         .status.error {
             background: #f8d7da;
             color: #721c24;
             display: block;
+            border: 1px solid #f5c6cb;
         }
 
         .location-btn {
@@ -218,15 +293,22 @@
             margin: 8px 0;
             width: 100%;
             font-size: 1rem;
+            transition: background 0.2s;
         }
+
         .location-btn:hover {
             background: #128C7E;
         }
+
         .address-hint {
             font-size: 0.75rem;
             color: #666;
             margin-top: 5px;
+            padding: 5px;
+            background: #f9f9f9;
+            border-radius: 5px;
         }
+
         .map-link {
             display: inline-block;
             background: #4285F4;
@@ -236,8 +318,107 @@
             border-radius: 5px;
             font-size: 0.8rem;
             margin-top: 5px;
+            margin-right: 5px;
+            transition: background 0.2s;
         }
 
+        .map-link:hover {
+            background: #3367d6;
+        }
+
+        .phone-container {
+            margin: 10px 0;
+        }
+
+        .phone-wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin: 8px 0;
+        }
+
+        #countryCode {
+            width: auto;
+            min-width: 120px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+        }
+
+        #customerPhone {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        #customerPhone:focus {
+            outline: none;
+            border-color: #ff6b35;
+        }
+
+        #phoneError {
+            color: #ff4444;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            padding-left: 5px;
+        }
+
+        .admin-access-btn {
+            background: #666;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+
+        .admin-access-btn:hover {
+            background: #888;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 10px;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .menu-items {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 10px;
+            }
+            
+            .menu-card img {
+                height: 120px;
+            }
+            
+            .phone-wrapper {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            #countryCode {
+                width: 100%;
+            }
+            
+            .admin-input {
+                flex-direction: column;
+            }
+            
+            .admin-input input {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -251,14 +432,20 @@
             <h2>📋 Our Menu</h2>
             <div id="menuItems" class="menu-items"></div>
             
-            <div class="admin-panel">
-                <h3>🔧 Admin Controls (Add/Remove Items)</h3>
+            <div id="adminPanel" style="display: none; margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 10px;">
+                <h3>🔧 Admin Controls</h3>
                 <div class="admin-input">
-                    <input type="text" id="newItemName" placeholder="Item name (e.g., Chicken Biryani)">
+                    <input type="text" id="newItemName" placeholder="Item name">
                     <input type="number" id="newItemPrice" placeholder="Price (KES)">
-                    <input type="text" id="newItemCategory" placeholder="Category (Biryani/Pilau/Fast Food)">
+                    <input type="text" id="newItemCategory" placeholder="Category">
                     <button class="admin-btn" onclick="addMenuItem()">➕ Add Item</button>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button onclick="showAdminLogin()" class="admin-access-btn">
+                    🔐 Admin Access
+                </button>
             </div>
         </div>
 
@@ -269,23 +456,39 @@
             
             <div class="order-form">
                 <h3>📝 Delivery & Booking Details</h3>
+                
                 <input type="text" id="customerName" placeholder="Your Full Name" required>
-                <input type="tel" id="customerPhone" placeholder="Phone Number (for order confirmation)" required>
-<textarea id="deliveryAddress" rows="3" placeholder="Delivery Address (Street, Estate, Building Name, House Number)" required></textarea>
-<button type="button" class="location-btn" onclick="shareLiveLocation()">
-    📍 Share My Live Location (WhatsApp/Google Maps)
-</button>
-<button type="button" class="location-btn" onclick="openGoogleMaps()">
-    🗺️ Open Google Maps to Copy Address
-</button>
-<div id="locationStatus" class="address-hint"></div>
-<input type="text" id="landmark" placeholder="Nearby Landmark (Optional - e.g., near Kenol Petrol Station)">
+                
+                <div class="phone-wrapper">
+                    <select id="countryCode">
+                        <option value="+254">🇰🇪 Kenya (+254)</option>
+                        <option value="+256">🇺🇬 Uganda (+256)</option>
+                        <option value="+255">🇹🇿 Tanzania (+255)</option>
+                        <option value="+233">🇬🇭 Ghana (+233)</option>
+                        <option value="+234">🇳🇬 Nigeria (+234)</option>
+                    </select>
+                    <input type="tel" id="customerPhone" placeholder="Phone Number (e.g., 712345678)" required>
+                </div>
+                <div id="phoneError" style="color: #ff4444; font-size: 0.8rem; display: none;"></div>
+                
+                <textarea id="deliveryAddress" rows="3" placeholder="Delivery Address (Street, Estate, Building Name, House Number)" required></textarea>
+                
+                <button type="button" class="location-btn" onclick="shareLiveLocation()">
+                    📍 Share My Live Location (WhatsApp/Google Maps)
+                </button>
+                <button type="button" class="location-btn" onclick="openGoogleMaps()">
+                    🗺️ Open Google Maps to Copy Address
+                </button>
+                
+                <div id="locationStatus" class="address-hint"></div>
+                
+                <input type="text" id="landmark" placeholder="Nearby Landmark (Optional)">
                 <input type="text" id="bookingService" placeholder="Book a service (e.g., Catering, Event Booking)">
                 
                 <div id="statusMsg" class="status"></div>
-                <button onclick="submitOrder()">📞 Place Order (Pay on Delivery / Manual M-Pesa)</button>
+                <button onclick="submitOrder()">📞 Place Order (Pay on Delivery)</button>
             </div>
-            <p style="font-size: 0.8rem; margin-top: 10px; color: #666;">
+            <p style="font-size: 0.8rem; margin-top: 10px; color: #666; text-align: center;">
                 * You'll be contacted via phone to complete M-Pesa payment
             </p>
         </div>
@@ -294,14 +497,14 @@
     <script>
         // Default menu items
         let menuItems = [
-            { id: 1, name: "Chicken Biryani", price: 450, category: "Biryani" },
-            { id: 2, name: "Beef Biryani", price: 500, category: "Biryani" },
-            { id: 3, name: "Chicken Pilau", price: 350, category: "Pilau" },
-            { id: 4, name: "Beef Pilau", price: 400, category: "Pilau" },
-            { id: 5, name: "French Fries", price: 150, category: "Fast Food" },
-            { id: 6, name: "Burger", price: 250, category: "Fast Food" },
-            { id: 7, name: "Samosa (3pcs)", price: 100, category: "Fast Food" },
-            { id: 8, name: "Soda", price: 70, category: "Drinks" }
+            { id: 1, name: "Chicken Biryani", price: 450, category: "Biryani", image: "https://nonoyatech.github.io/mntreats/images/Delicious Chicken Biryani with Raita.jpeg" },
+            { id: 2, name: "Beef Biryani", price: 650, category: "Biryani", image: "https://via.placeholder.com/300x200/FF6600/white?text=Beef+Biryani" },
+            { id: 3, name: "Chicken Pilau", price: 350, category: "Pilau", image: "https://via.placeholder.com/300x200/FF9933/white?text=Chicken+Pilau" },
+            { id: 4, name: "Beef Pilau", price: 400, category: "Pilau", image: "https://via.placeholder.com/300x200/FF9933/white?text=Beef+Pilau" },
+            { id: 5, name: "French Fries", price: 150, category: "Fast Food", image: "https://via.placeholder.com/300x200/FFCC00/white?text=French+Fries" },
+            { id: 6, name: "Burger", price: 250, category: "Fast Food", image: "https://via.placeholder.com/300x200/FFCC00/white?text=Burger" },
+            { id: 7, name: "Samosa (3pcs)", price: 100, category: "Fast Food", image: "https://via.placeholder.com/300x200/FFCC00/white?text=Samosa" },
+            { id: 8, name: "Soda", price: 70, category: "Drinks", image: "https://via.placeholder.com/300x200/00CCFF/white?text=Soda" }
         ];
 
         let cart = [];
@@ -335,216 +538,29 @@
             renderCart();
         }
 
-        // Add item to cart
-        function addToCart(itemId) {
-            const item = menuItems.find(i => i.id === itemId);
-            const existing = cart.find(c => c.id === itemId);
-            
-            if (existing) {
-                existing.quantity++;
-            } else {
-                cart.push({ ...item, quantity: 1 });
-            }
-            
-            saveCart();
-            showStatus(`${item.name} added to cart!`, 'success');
-        }
-
-        // Share live location via WhatsApp
-function shareLiveLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            function(position) {
-                const lat = position.coords.latitude;
-                const lng = position.coords.longitude;
-                const mapsLink = `https://www.google.com/maps?q=${lat},${lng}`;
-                const whatsappLink = `https://wa.me/?text=My%20delivery%20location:%20${mapsLink}`;
-                
-                document.getElementById('locationStatus').innerHTML = `
-                    ✅ Location captured! 
-                    <a href="${mapsLink}" target="_blank" class="map-link">View on Map</a>
-                    <a href="${whatsappLink}" target="_blank" class="map-link">Send via WhatsApp</a>
-                `;
-                
-                // Store coordinates
-                window.customerLat = lat;
-                window.customerLng = lng;
-            },
-            function(error) {
-                document.getElementById('locationStatus').innerHTML = '⚠️ Please enable location services or type address manually';
-            }
-        );
-    } else {
-        document.getElementById('locationStatus').innerHTML = '⚠️ Browser doesn\'t support location. Please type address.';
-    }
-}
-
-// Open Google Maps for customer to find & copy address
-function openGoogleMaps() {
-    window.open('https://www.google.com/maps', '_blank');
-    document.getElementById('locationStatus').innerHTML = '📍 Open Google Maps → Search your location → Click on the address → Copy and paste above';
-}
-
-// Modified submitOrder function with better address collection
-function submitOrder() {
-    const customerName = document.getElementById('customerName').value.trim();
-    const customerPhone = document.getElementById('customerPhone').value.trim();
-    let deliveryAddress = document.getElementById('deliveryAddress').value.trim();
-    const landmark = document.getElementById('landmark').value.trim();
-    const bookingService = document.getElementById('bookingService').value.trim();
-    
-    // Add landmark to address if provided
-    if (landmark) {
-        deliveryAddress += ` (Near: ${landmark})`;
-    }
-    
-    // Add GPS coordinates if captured
-    if (window.customerLat && window.customerLng) {
-        deliveryAddress += `\n📍 GPS: https://maps.google.com?q=${window.customerLat},${window.customerLng}`;
-    }
-    
-    if (!customerName || !customerPhone || !deliveryAddress) {
-        showStatus('Please fill Name, Phone, and Delivery Address', 'error');
-        return;
-    }
-    
-    if (cart.length === 0) {
-        showStatus('Your cart is empty! Add some items first.', 'error');
-        return;
-    }
-    
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    
-    const order = {
-        orderId: 'MN' + Date.now(),
-        customer: { 
-            name: customerName, 
-            phone: customerPhone, 
-            address: deliveryAddress,
-            landmark: landmark || 'None'
-        },
-        items: cart.map(i => ({ name: i.name, quantity: i.quantity, price: i.price, subtotal: i.price * i.quantity })),
-        total: total,
-        bookingRequest: bookingService || 'None',
-        timestamp: new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' }),
-        paymentStatus: 'Pending - Call customer for M-Pesa',
-        riderNotes: `📞 Call customer before delivery\n🚗 Ask for exact building/floor number`
-    };
-    
-    // Save order
-    const orders = JSON.parse(localStorage.getItem('mnTreats_orders') || '[]');
-    orders.push(order);
-    localStorage.setItem('mnTreats_orders', JSON.stringify(orders));
-    
-    // Send to Telegram
-    sendOrderToTelegram(order);
-    
-    // Clear cart and form
-    cart = [];
-    saveCart();
-    document.getElementById('customerName').value = '';
-    document.getElementById('customerPhone').value = '';
-    document.getElementById('deliveryAddress').value = '';
-    document.getElementById('landmark').value = '';
-    document.getElementById('bookingService').value = '';
-    window.customerLat = null;
-    window.customerLng = null;
-    document.getElementById('locationStatus').innerHTML = '';
-    
-    showStatus(`✅ Order #${order.orderId} placed! Total: KES ${total}\nWe'll call you on ${customerPhone} to confirm delivery address & payment.`, 'success');
-    
-    // Show full order details for admin
-    console.log('📦 NEW ORDER DETAILS:', order);
-    alert(`🧾 ORDER CONFIRMATION\n\nOrder ID: ${order.orderId}\nCustomer: ${customerName}\nPhone: ${customerPhone}\nTotal: KES ${total}\n\n📍 DELIVERY ADDRESS:\n${deliveryAddress}\n\nWe will call you within 5 minutes to confirm.`);
-}
-
-// Updated Telegram notification with full address
-function sendOrderToTelegram(order) {
-    const BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE';  // REPLACE WITH YOUR TOKEN
-    const CHAT_ID = 'YOUR_CHAT_ID_HERE';      // REPLACE WITH YOUR CHAT ID
-    
-    if (BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE') {
-        console.log('⚠️ Telegram not configured. Set BOT_TOKEN and CHAT_ID');
-        console.log('📦 Order saved locally. Run viewOrders() to see it.');
-        return;
-    }
-    
-    const message = `
-🍛🍔 M&N TREATS - NEW ORDER 🍕🍟
-━━━━━━━━━━━━━━━━━━━━━━━━
-🆔 ORDER ID: ${order.orderId}
-⏰ TIME: ${order.timestamp}
-━━━━━━━━━━━━━━━━━━━━━━━━
-👤 CUSTOMER:
-  Name: ${order.customer.name}
-  Phone: ${order.customer.phone}
-━━━━━━━━━━━━━━━━━━━━━━━━
-📍 DELIVERY ADDRESS:
-${order.customer.address}
-━━━━━━━━━━━━━━━━━━━━━━━━
-📦 ORDER ITEMS:
-${order.items.map(i => `  • ${i.name} x${i.quantity} = KES ${i.subtotal}`).join('\n')}
-━━━━━━━━━━━━━━━━━━━━━━━━
-💰 TOTAL: KES ${order.total}
-🎂 BOOKING: ${order.bookingRequest}
-━━━━━━━━━━━━━━━━━━━━━━━━
-📌 INSTRUCTIONS:
-  1. Call customer on ${order.customer.phone}
-  2. Confirm exact delivery location
-  3. Ask for M-Pesa payment
-  4. Share live location with rider
-━━━━━━━━━━━━━━━━━━━━━━━━
-✅ ACTION: Call customer NOW
-    `;
-    
-    // Send to Telegram
-    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-            chat_id: CHAT_ID, 
-            text: message,
-            parse_mode: 'HTML'
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.ok) {
-            console.log('✅ Order sent to Telegram');
-        } else {
-            console.error('Telegram error:', data);
-        }
-    })
-    .catch(err => console.error('Failed to send to Telegram:', err));
-}
-        // Update cart item quantity
-        function updateQuantity(itemId, delta) {
-            const item = cart.find(c => c.id === itemId);
-            if (item) {
-                item.quantity += delta;
-                if (item.quantity <= 0) {
-                    cart = cart.filter(c => c.id !== itemId);
-                }
-                saveCart();
-            }
-        }
-
-        // Remove item from cart
-        function removeCartItem(itemId) {
-            cart = cart.filter(c => c.id !== itemId);
-            saveCart();
-        }
-
         // Render menu
         function renderMenu() {
             const container = document.getElementById('menuItems');
+            if (!container) return;
+            
+            let isAdmin = false;
+            const adminPanel = document.getElementById('adminPanel');
+            if (adminPanel && adminPanel.style.display === 'block') {
+                isAdmin = true;
+            }
+            
+            if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+                isAdmin = true;
+            }
+            
             container.innerHTML = menuItems.map(item => `
                 <div class="menu-card">
+                    <img src="${item.image}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/300x200/cccccc/white?text=No+Image'">
                     <h3>${item.name}</h3>
                     <p style="color: #666; font-size: 0.85rem;">${item.category}</p>
                     <div class="price">KES ${item.price}</div>
-                    <button class="add-btn" onclick="addToCart(${item.id})">Add to Cart</button>
-                    <button class="delete-item" onclick="deleteMenuItem(${item.id})">🗑 Remove</button>
+                    <button class="add-btn" onclick="addToCart(${item.id})">🛒 Add to Cart</button>
+                    ${isAdmin ? `<button class="delete-item" onclick="deleteMenuItem(${item.id})">🗑 Remove</button>` : ''}
                 </div>
             `).join('');
         }
@@ -552,6 +568,8 @@ ${order.items.map(i => `  • ${i.name} x${i.quantity} = KES ${i.subtotal}`).joi
         // Render cart
         function renderCart() {
             const cartContainer = document.getElementById('cartItems');
+            if (!cartContainer) return;
+            
             if (cart.length === 0) {
                 cartContainer.innerHTML = '<p style="color: #999;">Your cart is empty</p>';
                 document.getElementById('cartTotal').innerHTML = 'Total: KES 0';
@@ -577,7 +595,53 @@ ${order.items.map(i => `  • ${i.name} x${i.quantity} = KES ${i.subtotal}`).joi
             document.getElementById('cartTotal').innerHTML = `Total: KES ${total}`;
         }
 
-        // Admin: Add menu item
+        // Add to cart
+        function addToCart(itemId) {
+            const item = menuItems.find(i => i.id === itemId);
+            const existing = cart.find(c => c.id === itemId);
+            
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push({ ...item, quantity: 1 });
+            }
+            
+            saveCart();
+            showStatus(`${item.name} added to cart!`, 'success');
+        }
+
+        // Update quantity
+        function updateQuantity(itemId, delta) {
+            const item = cart.find(c => c.id === itemId);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(c => c.id !== itemId);
+                }
+                saveCart();
+            }
+        }
+
+        // Remove from cart
+        function removeCartItem(itemId) {
+            cart = cart.filter(c => c.id !== itemId);
+            saveCart();
+        }
+
+        // Admin login
+        function showAdminLogin() {
+            const password = prompt("Enter Admin Password:");
+            if (password === "AkwanyV2027") {
+                document.getElementById('adminPanel').style.display = 'block';
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                renderMenu();
+                alert("Admin panel unlocked!");
+            } else if (password !== null) {
+                alert("Wrong password!");
+            }
+        }
+
+        // Add menu item
         function addMenuItem() {
             const name = document.getElementById('newItemName').value.trim();
             const price = parseFloat(document.getElementById('newItemPrice').value);
@@ -592,7 +656,8 @@ ${order.items.map(i => `  • ${i.name} x${i.quantity} = KES ${i.subtotal}`).joi
                 id: nextId++,
                 name: name,
                 price: price,
-                category: category
+                category: category,
+                image: "https://via.placeholder.com/300x200/cccccc/white?text=" + encodeURIComponent(name)
             };
             
             menuItems.push(newItem);
@@ -605,7 +670,7 @@ ${order.items.map(i => `  • ${i.name} x${i.quantity} = KES ${i.subtotal}`).joi
             showStatus(`"${name}" added to menu!`, 'success');
         }
 
-        // Admin: Delete menu item
+        // Delete menu item
         function deleteMenuItem(id) {
             if (confirm('Remove this item from menu?')) {
                 menuItems = menuItems.filter(i => i.id !== id);
@@ -615,25 +680,129 @@ ${order.items.map(i => `  • ${i.name} x${i.quantity} = KES ${i.subtotal}`).joi
             }
         }
 
-        // Show status message
-        function showStatus(msg, type) {
-            const statusDiv = document.getElementById('statusMsg');
-            statusDiv.className = `status ${type}`;
-            statusDiv.textContent = msg;
-            setTimeout(() => {
-                statusDiv.className = 'status';
-            }, 3000);
+        // Share live location
+        function shareLiveLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        const lat = position.coords.latitude;
+                        const lng = position.coords.longitude;
+                        const mapsLink = `https://www.google.com/maps?q=${lat},${lng}`;
+                        const whatsappLink = `https://wa.me/?text=My%20delivery%20location:%20${mapsLink}`;
+                        
+                        document.getElementById('locationStatus').innerHTML = `
+                            ✅ Location captured! 
+                            <a href="${mapsLink}" target="_blank" class="map-link">View on Map</a>
+                            <a href="${whatsappLink}" target="_blank" class="map-link">Send via WhatsApp</a>
+                        `;
+                        
+                        window.customerLat = lat;
+                        window.customerLng = lng;
+                    },
+                    function(error) {
+                        document.getElementById('locationStatus').innerHTML = '⚠️ Please enable location services or type address manually';
+                    }
+                );
+            } else {
+                document.getElementById('locationStatus').innerHTML = '⚠️ Browser doesn\'t support location. Please type address.';
+            }
+        }
+
+        // Open Google Maps
+        function openGoogleMaps() {
+            window.open('https://www.google.com/maps', '_blank');
+            document.getElementById('locationStatus').innerHTML = '📍 Open Google Maps → Search your location → Click on the address → Copy and paste above';
+        }
+
+        // Phone validation
+        function validatePhoneNumber() {
+            const countryCode = document.getElementById('countryCode').value;
+            let phoneNumber = document.getElementById('customerPhone').value.trim();
+            const errorDiv = document.getElementById('phoneError');
+            
+            phoneNumber = phoneNumber.replace(/\D/g, '');
+            document.getElementById('customerPhone').value = phoneNumber;
+            
+            let isValid = false;
+            let errorMessage = '';
+            
+            if (countryCode === '+254') {
+                if (phoneNumber.length === 9 && (phoneNumber.startsWith('7') || phoneNumber.startsWith('1'))) {
+                    isValid = true;
+                } else if (phoneNumber.length === 10 && phoneNumber.startsWith('01')) {
+                    isValid = true;
+                } else {
+                    errorMessage = '❌ Kenyan number must be 9 digits (e.g., 712345678)';
+                }
+            } else if (countryCode === '+256') {
+                if (phoneNumber.length === 9 && phoneNumber.startsWith('7')) {
+                    isValid = true;
+                } else {
+                    errorMessage = '❌ Ugandan number must be 9 digits starting with 7';
+                }
+            } else if (countryCode === '+255') {
+                if (phoneNumber.length === 9 && (phoneNumber.startsWith('6') || phoneNumber.startsWith('7'))) {
+                    isValid = true;
+                } else {
+                    errorMessage = '❌ Tanzanian number must be 9 digits starting with 6 or 7';
+                }
+            } else if (countryCode === '+233') {
+                if (phoneNumber.length === 9 && phoneNumber.startsWith('2')) {
+                    isValid = true;
+                } else {
+                    errorMessage = '❌ Ghanaian number must be 9 digits starting with 2';
+                }
+            } else if (countryCode === '+234') {
+                if (phoneNumber.length === 10 && (phoneNumber.startsWith('7') || phoneNumber.startsWith('8') || phoneNumber.startsWith('9'))) {
+                    isValid = true;
+                } else {
+                    errorMessage = '❌ Nigerian number must be 10 digits starting with 7,8, or 9';
+                }
+            } else {
+                if (phoneNumber.length >= 7 && phoneNumber.length <= 12) {
+                    isValid = true;
+                } else {
+                    errorMessage = '❌ Phone number must be 7-12 digits';
+                }
+            }
+            
+            if (!isValid) {
+                errorDiv.style.display = 'block';
+                errorDiv.textContent = errorMessage;
+                return false;
+            } else {
+                errorDiv.style.display = 'none';
+                return true;
+            }
         }
 
         // Submit order
         function submitOrder() {
             const customerName = document.getElementById('customerName').value.trim();
-            const customerPhone = document.getElementById('customerPhone').value.trim();
-            const deliveryAddress = document.getElementById('deliveryAddress').value.trim();
+            const countryCode = document.getElementById('countryCode').value;
+            let customerPhoneRaw = document.getElementById('customerPhone').value.trim();
+            customerPhoneRaw = customerPhoneRaw.replace(/\D/g, '');
+            
+            if (!validatePhoneNumber()) {
+                showStatus('Please enter a valid phone number for your country', 'error');
+                return;
+            }
+            
+            const fullPhoneNumber = countryCode + customerPhoneRaw;
+            let deliveryAddress = document.getElementById('deliveryAddress').value.trim();
+            const landmark = document.getElementById('landmark').value.trim();
             const bookingService = document.getElementById('bookingService').value.trim();
             
-            if (!customerName || !customerPhone || !deliveryAddress) {
-                showStatus('Please fill all required fields (Name, Phone, Address)', 'error');
+            if (landmark) {
+                deliveryAddress += ` (Near: ${landmark})`;
+            }
+            
+            if (window.customerLat && window.customerLng) {
+                deliveryAddress += `\n📍 GPS: https://maps.google.com?q=${window.customerLat},${window.customerLng}`;
+            }
+            
+            if (!customerName || !customerPhoneRaw || !deliveryAddress) {
+                showStatus('Please fill Name, Phone, and Delivery Address', 'error');
                 return;
             }
             
@@ -646,49 +815,45 @@ ${order.items.map(i => `  • ${i.name} x${i.quantity} = KES ${i.subtotal}`).joi
             
             const order = {
                 orderId: 'MN' + Date.now(),
-                customer: { name: customerName, phone: customerPhone, address: deliveryAddress },
+                customer: { 
+                    name: customerName, 
+                    phone: fullPhoneNumber, 
+                    address: deliveryAddress,
+                    landmark: landmark || 'None'
+                },
                 items: cart.map(i => ({ name: i.name, quantity: i.quantity, price: i.price, subtotal: i.price * i.quantity })),
                 total: total,
                 bookingRequest: bookingService || 'None',
                 timestamp: new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' }),
-                paymentStatus: 'Pending (Customer to be called for M-Pesa)'
+                paymentStatus: 'Pending - Call customer for M-Pesa'
             };
             
-            // Save to localStorage for admin view
             const orders = JSON.parse(localStorage.getItem('mnTreats_orders') || '[]');
             orders.push(order);
             localStorage.setItem('mnTreats_orders', JSON.stringify(orders));
             
-            // Send to admin via Telegram (FREE - Need to set up bot)
             sendOrderToTelegram(order);
             
-            // Clear cart
             cart = [];
             saveCart();
             
-            // Clear form
             document.getElementById('customerName').value = '';
             document.getElementById('customerPhone').value = '';
             document.getElementById('deliveryAddress').value = '';
+            document.getElementById('landmark').value = '';
             document.getElementById('bookingService').value = '';
+            window.customerLat = null;
+            window.customerLng = null;
+            document.getElementById('locationStatus').innerHTML = '';
             
-            showStatus(`✅ Order placed! Order ID: ${order.orderId}\nYou'll receive a call on ${customerPhone} to complete M-Pesa payment of KES ${total}`, 'success');
-            
-            // Also show order summary in console for admin
-            console.log('📦 NEW ORDER:', order);
-            alert(`Order placed!\nOrder ID: ${order.orderId}\nTotal: KES ${total}\n\nWe will call you on ${customerPhone} to confirm payment & delivery.`);
+            showStatus(`✅ Order #${order.orderId} placed! Total: KES ${total}`, 'success');
+            alert(`🧾 ORDER CONFIRMATION\n\nOrder ID: ${order.orderId}\nCustomer: ${customerName}\nPhone: ${fullPhoneNumber}\nTotal: KES ${total}\n\n📍 DELIVERY ADDRESS:\n${deliveryAddress}\n\nWe will call you within 5 minutes to confirm.`);
         }
-        
-        // FREE Telegram notification (You must create a bot)
+
+        // Telegram notification
         function sendOrderToTelegram(order) {
-            // 🔴 REPLACE WITH YOUR TELEGRAM BOT TOKEN AND CHAT ID
-            const BOT_TOKEN = '8556599955:AAFgZAra5WT5fgUzfPcWGdalJV46ZA0ID_Y';  // Get from @BotFather on Telegram
-            const CHAT_ID = '5440492809';      // Your personal chat ID
-            
-            if (BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE') {
-                console.log('Telegram not configured. Order saved locally.');
-                return;
-            }
+            const BOT_TOKEN = '8556599955:AAFgZAra5WT5fgUzfPcWGdalJV46ZA0ID_Y';
+            const CHAT_ID = '5440492809';
             
             const message = `
 🍛 M&N TREATS - NEW ORDER 🍔
@@ -714,8 +879,18 @@ ${order.items.map(i => `  • ${i.name} x${i.quantity} = KES ${i.subtotal}`).joi
                 body: JSON.stringify({ chat_id: CHAT_ID, text: message })
             }).catch(err => console.error('Telegram error:', err));
         }
-        
-        // Admin: View orders (from browser console)
+
+        // Show status message
+        function showStatus(msg, type) {
+            const statusDiv = document.getElementById('statusMsg');
+            statusDiv.className = `status ${type}`;
+            statusDiv.textContent = msg;
+            setTimeout(() => {
+                statusDiv.className = 'status';
+            }, 3000);
+        }
+
+        // Admin functions
         window.viewOrders = function() {
             const orders = JSON.parse(localStorage.getItem('mnTreats_orders') || '[]');
             console.table(orders.map(o => ({ 
@@ -728,26 +903,30 @@ ${order.items.map(i => `  • ${i.name} x${i.quantity} = KES ${i.subtotal}`).joi
             return orders;
         };
         
-        // Admin: Clear all orders
         window.clearOrders = function() {
             if(confirm('Delete all orders?')) {
                 localStorage.removeItem('mnTreats_orders');
                 console.log('All orders deleted');
             }
         };
+
+        // Real-time phone validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const phoneInput = document.getElementById('customerPhone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function() {
+                    validatePhoneNumber();
+                });
+            }
+        });
         
         // Initialize
         loadData();
         
-        // Display admin instructions in console
         console.log('🔧 M&N Treats Admin Panel:');
         console.log('  - viewOrders() → See all orders');
         console.log('  - clearOrders() → Delete all orders');
-        console.log('  - Menu items persist in browser localStorage');
-        console.log('\n📱 To get Telegram notifications:');
-        console.log('1. Message @BotFather on Telegram → Create bot');
-        console.log('2. Get your chat ID from @userinfobot');
-        console.log('3. Edit BOT_TOKEN and CHAT_ID in the code');
+        console.log('  - Admin Password: AkwanyV2027');
     </script>
 </body>
 </html>
