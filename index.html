@@ -437,27 +437,49 @@
     margin-top: 15px;
 }
 
+/* Filter Buttons - Matching M&N Treats Theme */
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
 .filter-btn {
-    background: #f0f0f0;
-    color: #333;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 25px;
+    background: #2d1b0e;  
+    color: #ffd700;       
+    border: 2px solid #ff6b35; 
+    padding: 10px 24px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 0.9rem;
-    transition: all 0.3s;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
 .filter-btn:hover {
-    background: #ff6b35;
+    background: #ff6b35;  /* Orange on hover */
     color: white;
-    transform: translateY(-2px);
+    border-color: #ff6b35;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255,107,53,0.3);
 }
 
 .filter-btn.active {
-    background: #ff6b35;
+    background: #ff6b35;  /* Orange for active */
     color: white;
-    box-shadow: 0 2px 8px rgba(255,107,53,0.4);
+    border-color: #ff6b35;
+    box-shadow: 0 4px 12px rgba(255,107,53,0.4);
+    transform: scale(1.02);
+}
+
+.filter-btn.active-brown {
+    background: #2d1b0e;
+    color: #ffd700;
+    border-color: #ffd700;
+    box-shadow: 0 4px 12px rgba(45,27,14,0.3);
 }
 
 .clear-search {
@@ -519,19 +541,19 @@
     
     <div class="category-filters">
         <button class="filter-btn active" onclick="filterByCategory('all')">🍽️ All</button>
-        <button class="filter-btn" onclick="filterByCategory('Swahili Dishes')">🍛 Swahili Dishes</button>
+        <button class="filter-btn" onclick="filterByCategory('Swahili Dish')">🍛 Swahili Dishes</button>
         <button class="filter-btn" onclick="filterByCategory('Mocktails')">Mocktails</button>
         <button class="filter-btn" onclick="filterByCategory('Fast Food')">🍔 Fast Food</button>
         <button class="filter-btn" onclick="filterByCategory('Drinks')">🥤 Drinks</button>
         <button class="filter-btn" onclick="filterByCategory('Food')">Food</button>
-        <button class="filter-btn" onclick="filterByCategory('Cocktails')">🥤 Cocktails</button>
+        <button class="filter-btn" onclick="filterByCategory('Cocktail')">🥤 Cocktails</button>
         <button class="filter-btn" onclick="filterByCategory('Snacks')">Snacks</button>
         <button class="filter-btn" onclick="filterByCategory('Breakfast')">Breakfast</button>
-        <button class="filter-btn" onclick="filterByCategory('Seafood')">Sea Food</button>
+        <button class="filter-btn" onclick="filterByCategory('Sea Food')">Sea Food</button>
         <button class="filter-btn" onclick="filterByCategory('Veggies')">Veggies</button>
         <button class="filter-btn" onclick="filterByCategory('Refreshments')">Refreshments</button>
         <button class="filter-btn" onclick="filterByCategory('Barbeque')">Barbeque</button>
-        <button class="filter-btn" onclick="filterByCategory('Italian cuisine')">Italian Cuisine</button>
+        <button class="filter-btn" onclick="filterByCategory('Italian Cuisine')">Italian Cuisine</button>
     </div>
     
     <div class="results-count" id="resultsCount"></div>
