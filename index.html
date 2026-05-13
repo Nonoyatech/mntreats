@@ -406,6 +406,89 @@
                 flex-direction: column;
                 gap: 5px;
             }
+        
+.search-filter-section {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.search-box {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.search-box:focus {
+    border-color: #ff6b35;
+    box-shadow: 0 0 5px rgba(255,107,53,0.3);
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.filter-btn {
+    background: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background: #ff6b35;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #ff6b35;
+    color: white;
+    box-shadow: 0 2px 8px rgba(255,107,53,0.4);
+}
+
+.clear-search {
+    background: #666;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-left: 10px;
+}
+
+.clear-search:hover {
+    background: #444;
+}
+
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
+}
+
+.results-count {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 10px;
+    padding-left: 5px;
+}
             
             #countryCode {
                 width: 100%;
@@ -430,6 +513,20 @@
     <div class="container">
         <div class="menu-section">
             <h2>📋 Our Menu</h2>
+            <!-- Search and Filter Section -->
+<div class="search-filter-section">
+    <input type="text" id="searchInput" class="search-box" placeholder="🔍 Search for biryani, pilau, burger, fries...">
+    
+    <div class="category-filters">
+        <button class="filter-btn active" onclick="filterByCategory('all')">🍽️ All</button>
+        <button class="filter-btn" onclick="filterByCategory('Biryani')">🍛 Biryani</button>
+        <button class="filter-btn" onclick="filterByCategory('Pilau')">🍚 Pilau</button>
+        <button class="filter-btn" onclick="filterByCategory('Fast Food')">🍔 Fast Food</button>
+        <button class="filter-btn" onclick="filterByCategory('Drinks')">🥤 Drinks</button>
+    </div>
+    
+    <div class="results-count" id="resultsCount"></div>
+</div>
             <div id="menuItems" class="menu-items"></div>
             
             <div id="adminPanel" style="display: none; margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 10px;">
@@ -892,7 +989,119 @@
                 </div>
             `).join('');
         }
+// Global variables for filtering
+let currentFilter = 'all';
+let currentSearch = '';
 
+// Filter menu items by category and search
+function getFilteredItems() {
+    let filtered = [...menuItems];
+    
+    // Filter by category
+    if (currentFilter !== 'all') {
+        filtered = filtered.filter(item => item.category === currentFilter);
+    }
+    
+    // Filter by search term
+    if (currentSearch !== '') {
+        const searchLower = currentSearch.toLowerCase();
+        filtered = filtered.filter(item => 
+            item.name.toLowerCase().includes(searchLower) ||
+            item.category.toLowerCase().includes(searchLower)
+        );
+    }
+    
+    return filtered;
+}
+
+// Filter by category button
+function filterByCategory(category) {
+    currentFilter = category;
+    currentSearch = document.getElementById('searchInput').value;
+    
+    // Update active button styling
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+    
+    renderFilteredMenu();
+}
+
+// Search function
+function searchItems() {
+    currentSearch = document.getElementById('searchInput').value;
+    renderFilteredMenu();
+}
+
+// Clear all filters and search
+function clearFilters() {
+    currentFilter = 'all';
+    currentSearch = '';
+    document.getElementById('searchInput').value = '';
+    
+    // Reset active button
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector('.filter-btn').classList.add('active');
+    
+    renderFilteredMenu();
+}
+
+// Render filtered menu
+function renderFilteredMenu() {
+    const container = document.getElementById('menuItems');
+    if (!container) return;
+    
+    const filteredItems = getFilteredItems();
+    const resultsCount = document.getElementById('resultsCount');
+    
+    // Update results count
+    if (resultsCount) {
+        if (filteredItems.length === menuItems.length) {
+            resultsCount.textContent = `Showing all ${menuItems.length} items`;
+        } else {
+            resultsCount.textContent = `Found ${filteredItems.length} of ${menuItems.length} items`;
+        }
+    }
+    
+    // Check if admin is logged in
+    let isAdmin = false;
+    const adminPanel = document.getElementById('adminPanel');
+    if (adminPanel && adminPanel.style.display === 'block') {
+        isAdmin = true;
+    }
+    if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+        isAdmin = true;
+    }
+    
+    // Show no results message
+    if (filteredItems.length === 0) {
+        container.innerHTML = `<div class="no-results">
+            😢 No items found matching "${currentSearch || currentFilter}"
+            <br><button onclick="clearFilters()" style="margin-top: 15px; background: #ff6b35; color: white; border: none; padding: 8px 20px; border-radius: 25px; cursor: pointer;">Clear Filters</button>
+        </div>`;
+        return;
+    }
+    
+    // Render filtered items
+    container.innerHTML = filteredItems.map(item => `
+        <div class="menu-card">
+            <img src="${item.image}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/300x200/cccccc/white?text=No+Image'">
+            <h3>${item.name}</h3>
+            <p style="color: #666; font-size: 0.85rem;">${item.category}</p>
+            <div class="price">KES ${item.price}</div>
+            <button class="add-btn" onclick="addToCart(${item.id})">🛒 Add to Cart</button>
+            ${isAdmin ? `<button class="delete-item" onclick="deleteMenuItem(${item.id})">🗑 Remove</button>` : ''}
+        </div>
+    `).join('');
+}
+
+// Update the original renderMenu to use filtered version
+function renderMenu() {
+    renderFilteredMenu();
+}
         // Render cart
         function renderCart() {
             const cartContainer = document.getElementById('cartItems');
@@ -1246,8 +1455,20 @@ ${order.items.map(i => `  • ${i.name} x${i.quantity} = KES ${i.subtotal}`).joi
                     validatePhoneNumber();
                 });
             }
+            const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            searchItems();
         });
         
+        // Press Escape to clear search
+        searchInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Escape') {
+                clearFilters();
+            }
+        });
+    }
+        });
         // Initialize
         loadData();
         
