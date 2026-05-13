@@ -430,13 +430,6 @@
     box-shadow: 0 0 5px rgba(255,107,53,0.3);
 }
 
-.category-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
-}
-
 /* Filter Buttons - Matching M&N Treats Theme */
 .category-filters {
     display: flex;
@@ -539,23 +532,22 @@
 <div class="search-filter-section">
     <input type="text" id="searchInput" class="search-box" placeholder="🔍 Search for biryani, pilau, burger, fries...">
     
-    <div class="category-filters">
-        <button class="filter-btn active" onclick="filterByCategory('all')">🍽️ All</button>
-        <button class="filter-btn" onclick="filterByCategory('Swahili Dish')">🍛 Swahili Dishes</button>
-        <button class="filter-btn" onclick="filterByCategory('Mocktails')">Mocktails</button>
-        <button class="filter-btn" onclick="filterByCategory('Fast Food')">🍔 Fast Food</button>
-        <button class="filter-btn" onclick="filterByCategory('Drinks')">🥤 Drinks</button>
-        <button class="filter-btn" onclick="filterByCategory('Food')">Food</button>
-        <button class="filter-btn" onclick="filterByCategory('Cocktail')">🥤 Cocktails</button>
-        <button class="filter-btn" onclick="filterByCategory('Snacks')">Snacks</button>
-        <button class="filter-btn" onclick="filterByCategory('Breakfast')">Breakfast</button>
-        <button class="filter-btn" onclick="filterByCategory('Sea Food')">Sea Food</button>
-        <button class="filter-btn" onclick="filterByCategory('Veggies')">Veggies</button>
-        <button class="filter-btn" onclick="filterByCategory('Refreshments')">Refreshments</button>
-        <button class="filter-btn" onclick="filterByCategory('Barbeque')">Barbeque</button>
-        <button class="filter-btn" onclick="filterByCategory('Italian Cuisine')">Italian Cuisine</button>
-    </div>
-    
+  <div class="category-filters">
+    <button class="filter-btn active" onclick="filterByCategory('all')">🍽️ All</button>
+    <button class="filter-btn" onclick="filterByCategory('Swahili Dish')">🍛 Swahili Dishes</button>
+    <button class="filter-btn" onclick="filterByCategory('Mocktail')">🍹 Mocktails</button>
+    <button class="filter-btn" onclick="filterByCategory('Fast Food')">🍔 Fast Food</button>
+    <button class="filter-btn" onclick="filterByCategory('Drinks')">🥤 Drinks</button>
+    <button class="filter-btn" onclick="filterByCategory('Food')">🍲 Food</button>
+    <button class="filter-btn" onclick="filterByCategory('Cocktail')">🍸 Cocktails</button>
+    <button class="filter-btn" onclick="filterByCategory('Snacks')">🍿 Snacks</button>
+    <button class="filter-btn" onclick="filterByCategory('Breakfast')">🍳 Breakfast</button>
+    <button class="filter-btn" onclick="filterByCategory('Sea Food')">🦞 Sea Food</button>
+    <button class="filter-btn" onclick="filterByCategory('Veggies')">🥗 Veggies</button>
+    <button class="filter-btn" onclick="filterByCategory('Refreshments')">🥤 Refreshments</button>
+    <button class="filter-btn" onclick="filterByCategory('Barbeque')">🔥 Barbeque</button>
+    <button class="filter-btn" onclick="filterByCategory('Italian Cuisine')">🍝 Italian Cuisine</button>
+</div>
     <div class="results-count" id="resultsCount"></div>
 </div>
             <div id="menuItems" class="menu-items"></div>
