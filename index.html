@@ -497,14 +497,342 @@
     <script>
         // Default menu items
         let menuItems = [
-            { id: 1, name: "Chicken Biryani", price: 450, category: "Biryani", image: "https://nonoyatech.github.io/mntreats/images/Delicious Chicken Biryani with Raita.jpeg" },
-            { id: 2, name: "Beef Biryani", price: 650, category: "Biryani", image: "https://nonoyatech.github.io/mntreats/images/Mutton biriyani 🍴🍛👌.jpeg" },
-            { id: 3, name: "Chicken Pilau", price: 350, category: "Pilau", image: "https://nonoyatech.github.io/mntreats/images/my home made special biryani serving with mint Reith.jpeg " },
-            { id: 4, name: "Beef Pilau", price: 400, category: "Pilau", image: "https://nonoyatech.github.io/mntreats/images/East African Pilau - Kenyan pilau.jpeg" },
-            { id: 5, name: "French Fries", price: 150, category: "Fast Food", image: "https://nonoyatech.github.io/mntreats/images/Biryani___ (2).jpeg" },
-            { id: 6, name: "Burger", price: 250, category: "Fast Food", image: "https://nonoyatech.github.io/mntreats/images/Chicken briyani.jpeg" },
-            { id: 7, name: "Samosa (3pcs)", price: 100, category: "Fast Food", image: "https://nonoyatech.github.io/mntreats/images/Mango Smoothie_ Smoothie_ Purple Acrylic Nails.jpeg" },
-            { id: 8, name: "Soda", price: 70, category: "Drinks", image: "https://nonoyatech.github.io/mntreats/images/Amazon_com_ 1000-CT Disposable Clear Dome Lid for….jpeg" }
+  {
+    "id": 6,
+    "name": "Burger",
+    "price": 250,
+    "category": "Fast Food",
+    "image": "https://nonoyatech.github.io/mntreats/images/Chicken briyani.jpeg"
+  },
+  {
+    "id": 7,
+    "name": "Samosa (3pcs)",
+    "price": 100,
+    "category": "Fast Food",
+    "image": "https://nonoyatech.github.io/mntreats/images/Mango Smoothie_ Smoothie_ Purple Acrylic Nails.jpeg"
+  },
+  {
+    "id": 8,
+    "name": "Soda",
+    "price": 70,
+    "category": "Drinks",
+    "image": "https://nonoyatech.github.io/mntreats/images/Amazon_com_ 1000-CT Disposable Clear Dome Lid for….jpeg"
+  },
+  {
+    "id": 9,
+    "name": "Chapati(2pcs)",
+    "price": 60,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Chapati(2pcs)"
+  },
+  {
+    "id": 10,
+    "name": "Sausages (2pcs)",
+    "price": 100,
+    "category": "Breakfast",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Sausages%20(2pcs)"
+  },
+  {
+    "id": 11,
+    "name": "White coffee",
+    "price": 80,
+    "category": "Breakfast",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=White%20coffee"
+  },
+  {
+    "id": 12,
+    "name": "Plain Milk",
+    "price": 100,
+    "category": "Snack",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Plain%20Milk"
+  },
+  {
+    "id": 13,
+    "name": "All Fresh juices(pineapple, Passion, Mango,Tamarind)",
+    "price": 100,
+    "category": "Refreshments",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=All%20Fresh%20juices(pineapple%2C%20Passion%2C%20Mango%2CTamarind)"
+  },
+  {
+    "id": 14,
+    "name": "Passion Mojito",
+    "price": 350,
+    "category": "Cocktail",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Passion%20Mojito"
+  },
+  {
+    "id": 15,
+    "name": "Fresh Pinacolada",
+    "price": 400,
+    "category": "Cocktail",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Fresh%20Pinacolada"
+  },
+  {
+    "id": 16,
+    "name": "Gin & Tonic",
+    "price": 500,
+    "category": "Cocktail",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Gin%20%26%20Tonic"
+  },
+  {
+    "id": 17,
+    "name": "Meat and chapati",
+    "price": 360,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Meat%20and%20chapati"
+  },
+  {
+    "id": 18,
+    "name": "Beans and Chapati",
+    "price": 120,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Beans%20and%20Chapati"
+  },
+  {
+    "id": 19,
+    "name": "Pancakes(3pcs)",
+    "price": 150,
+    "category": "Breakfast",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Pancakes(3pcs)"
+  },
+  {
+    "id": 21,
+    "name": "Smocha(2pcs)",
+    "price": 140,
+    "category": "Snacks",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Smocha(2pcs)"
+  },
+  {
+    "id": 22,
+    "name": "Smokie(2pcs)",
+    "price": 80,
+    "category": "Snacks",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Smokie(2pcs)"
+  },
+  {
+    "id": 24,
+    "name": "Ugali & Fried Fish",
+    "price": 500,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Ugali%20%26%20Fried%20Fish"
+  },
+  {
+    "id": 25,
+    "name": "Rice & Beans",
+    "price": 250,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Rice%20%26%20Beans"
+  },
+  {
+    "id": 26,
+    "name": "Ugali & Nyama choma",
+    "price": 450,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Ugali%20%26%20Nyama%20choma"
+  },
+  {
+    "id": 27,
+    "name": "Fried Plantain",
+    "price": 200,
+    "category": "Snacks",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Fried%20Plantain"
+  },
+  {
+    "id": 28,
+    "name": "Plain Chips(small)",
+    "price": 150,
+    "category": "Fast Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Plain%20Chips(small)"
+  },
+  {
+    "id": 29,
+    "name": "Plain chips(Large)",
+    "price": 250,
+    "category": "Fast Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Plain%20chips(Large)"
+  },
+  {
+    "id": 30,
+    "name": "Crunchy Fried Chicken(2pcs)",
+    "price": 400,
+    "category": "Fast Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Crunchy%20Fried%20Chicken(2pcs)"
+  },
+  {
+    "id": 31,
+    "name": "Fries & Crunch Fried Chicken",
+    "price": 550,
+    "category": "Fast Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Fries%20%26%20Crunch%20Fried%20Chicken"
+  },
+  {
+    "id": 32,
+    "name": "Virgin Mojito",
+    "price": 350,
+    "category": "Cocktail",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Virgin%20Mojito"
+  },
+  {
+    "id": 33,
+    "name": "All Mocktails",
+    "price": 250,
+    "category": "Mocktail",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=All%20Mocktails"
+  },
+  {
+    "id": 34,
+    "name": "White Tea",
+    "price": 80,
+    "category": "Breakfast",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=White%20Tea"
+  },
+  {
+    "id": 35,
+    "name": "Beef Pilau",
+    "price": 350,
+    "category": "Swahili Dish",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Beef%20Pilau"
+  },
+  {
+    "id": 36,
+    "name": "Chicken Pilau",
+    "price": 400,
+    "category": "Swahili Dish",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Chicken%20Pilau"
+  },
+  {
+    "id": 38,
+    "name": "Chicken Biryani",
+    "price": 600,
+    "category": "Swahili Dish",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Chicken%20Biryani"
+  },
+  {
+    "id": 39,
+    "name": "Beef Biryani",
+    "price": 500,
+    "category": "Swahili Dish",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Beef%20Biryani"
+  },
+  {
+    "id": 40,
+    "name": "Ugali & Coconut Fish",
+    "price": 550,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Ugali%20%26%20Coconut%20Fish"
+  },
+  {
+    "id": 41,
+    "name": "Prawns",
+    "price": 650,
+    "category": "Sea Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Prawns"
+  },
+  {
+    "id": 42,
+    "name": "Lobster",
+    "price": 1500,
+    "category": "Sea Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Lobster"
+  },
+  {
+    "id": 43,
+    "name": "All Salads",
+    "price": 350,
+    "category": "Veggies",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=All%20Salads"
+  },
+  {
+    "id": 44,
+    "name": "Salmon, Roasted Potatoes & Asparagus",
+    "price": 2200,
+    "category": "Sea Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Salmon%2C%20Roasted%20Potatoes%20%26%20Asparagus"
+  },
+  {
+    "id": 45,
+    "name": "Braised Chicken Thigh with mashed potatoes & Roasted Carrots",
+    "price": 1600,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Braised%20Chicken%20Thigh%20with%20mashed%20potatoes%20%26%20Roasted%20Carrots"
+  },
+  {
+    "id": 46,
+    "name": "Spaghetti & Minced Meat",
+    "price": 650,
+    "category": "Italian Cuisine",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Spaghetti%20%26%20Minced%20Meat"
+  },
+  {
+    "id": 47,
+    "name": "Meat Balls",
+    "price": 500,
+    "category": "Italian Cuisine",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Meat%20Balls"
+  },
+  {
+    "id": 48,
+    "name": "Meat Skewers",
+    "price": 100,
+    "category": "Snacks",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Meat%20Skewers"
+  },
+  {
+    "id": 49,
+    "name": "Chicken Stew",
+    "price": 300,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Chicken%20Stew"
+  },
+  {
+    "id": 50,
+    "name": "Peri Peri Chicken",
+    "price": 300,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Peri%20Peri%20Chicken"
+  },
+  {
+    "id": 51,
+    "name": "Vegetable Rice",
+    "price": 300,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Vegetable%20Rice"
+  },
+  {
+    "id": 52,
+    "name": "Ribs",
+    "price": 800,
+    "category": "Barbeque",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Ribs"
+  },
+  {
+    "id": 53,
+    "name": "Liver",
+    "price": 350,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Liver"
+  },
+  {
+    "id": 54,
+    "name": "Tripe Stew",
+    "price": 250,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Tripe%20Stew"
+  },
+  {
+    "id": 55,
+    "name": "Viazi Karai",
+    "price": 60,
+    "category": "Swahili Dish",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Viazi%20Karai"
+  },
+  {
+    "id": 56,
+    "name": "Plain Rice",
+    "price": 150,
+    "category": "Food",
+    "image": "https://via.placeholder.com/300x200/cccccc/white?text=Plain%20Rice"
+  }      
         ];
 
         let cart = [];
