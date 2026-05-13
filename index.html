@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M&N Treats - Biryani, Pilau & Fast Food</title>
-   <style>
+  <style>
         * {
             margin: 0;
             padding: 0;
@@ -85,6 +85,7 @@
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 10px;
+            background: linear-gradient(135deg, #2d1b0e 0%, #ff6b35 100%);
         }
 
         .menu-card h3 {
@@ -406,7 +407,7 @@
             box-shadow: 0 0 5px rgba(255,107,53,0.3);
         }
 
-        /* Filter Buttons - M&N Treats Theme */
+        /* Filter Buttons */
         .category-filters {
             display: flex;
             flex-wrap: wrap;
@@ -485,7 +486,7 @@
         }
 
         /* ========================================
-           MOBILE RESPONSIVE DESIGN
+           MOBILE RESPONSIVE DESIGN - FIXED GRID
            ======================================== */
 
         /* Tablet and Mobile (max-width: 768px) */
@@ -519,18 +520,22 @@
                 font-size: 1.3rem;
             }
             
-            /* Menu Items Grid - Mobile */
+            /* ===== IMPORTANT: GRID FIX FOR PHONES ===== */
+            /* Forces 2 columns on all phones */
             .menu-items {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-                gap: 12px;
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+                margin-top: 15px !important;
             }
             
+            /* Menu Cards */
             .menu-card {
                 padding: 12px;
             }
             
             .menu-card img {
-                height: 120px;
+                height: 110px;
             }
             
             .menu-card h3 {
@@ -547,37 +552,7 @@
                 font-size: 0.85rem;
             }
             
-            /* Cart Section Mobile */
-            .cart-section {
-                position: static;
-            }
-            
-            .cart-item {
-                flex-wrap: wrap;
-                gap: 8px;
-            }
-            
-            .cart-item-details {
-                flex: 1;
-                font-size: 0.9rem;
-            }
-            
-            .cart-item-qty {
-                width: 100%;
-                justify-content: flex-end;
-            }
-            
-            .qty-btn {
-                width: 30px;
-                height: 30px;
-                font-size: 1rem;
-            }
-            
-            .total {
-                font-size: 1.2rem;
-            }
-            
-            /* Category Filters - Horizontal Scroll on Mobile */
+            /* Category Filters - Horizontal Scroll */
             .category-filters {
                 flex-wrap: nowrap;
                 overflow-x: auto;
@@ -610,7 +585,7 @@
                 border-radius: 10px;
             }
             
-            /* Search Box Mobile */
+            /* Search Box */
             .search-box {
                 padding: 10px 15px;
                 font-size: 0.9rem;
@@ -620,7 +595,37 @@
                 font-size: 0.75rem;
             }
             
-            /* Phone Wrapper Mobile */
+            /* Cart Section */
+            .cart-section {
+                position: static;
+            }
+            
+            .cart-item {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            
+            .cart-item-details {
+                flex: 1;
+                font-size: 0.9rem;
+            }
+            
+            .cart-item-qty {
+                width: 100%;
+                justify-content: flex-end;
+            }
+            
+            .qty-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+            
+            .total {
+                font-size: 1.2rem;
+            }
+            
+            /* Phone Wrapper */
             .phone-wrapper {
                 flex-direction: column;
                 gap: 8px;
@@ -636,7 +641,7 @@
                 padding: 10px;
             }
             
-            /* Order Form Mobile */
+            /* Order Form */
             .order-form h3 {
                 font-size: 1.1rem;
             }
@@ -654,13 +659,13 @@
                 font-size: 1rem;
             }
             
-            /* Location Buttons Mobile */
+            /* Location Buttons */
             .location-btn {
                 padding: 10px;
                 font-size: 0.9rem;
             }
             
-            /* Admin Panel Mobile */
+            /* Admin Panel */
             .admin-input {
                 flex-direction: column;
                 gap: 8px;
@@ -676,44 +681,67 @@
                 padding: 10px;
             }
             
-            /* Admin Access Button Mobile */
             .admin-access-btn {
                 padding: 6px 16px;
                 font-size: 0.8rem;
             }
             
-            /* Status Messages Mobile */
+            /* Status Messages */
             .status {
                 padding: 8px;
                 font-size: 0.85rem;
             }
             
-            /* No Results Mobile */
             .no-results {
                 padding: 30px;
                 font-size: 0.9rem;
             }
             
-            /* Address Hint Mobile */
             .address-hint {
                 font-size: 0.7rem;
             }
         }
 
-        /* Extra Small Devices (iPhone SE, small phones - max-width: 480px) */
+        /* Extra Small Phones (iPhone SE, 375px and below) - 1 COLUMN */
         @media (max-width: 480px) {
             .menu-items {
-                grid-template-columns: 1fr;
-                gap: 12px;
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
             }
             
+            /* Optional: Horizontal card layout for very small screens */
             .menu-card {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                align-items: center;
+                gap: 12px;
+                padding: 10px;
             }
             
             .menu-card img {
-                height: 160px;
+                width: 80px;
+                height: 80px;
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+            
+            .menu-card > div {
+                flex: 1;
+            }
+            
+            .menu-card h3 {
+                font-size: 0.95rem;
+            }
+            
+            .price {
+                font-size: 1rem;
+                margin: 4px 0;
+            }
+            
+            .add-btn {
+                padding: 6px 10px;
+                font-size: 0.75rem;
             }
             
             header h1 {
@@ -729,7 +757,39 @@
             }
         }
 
-      
+        /* Landscape Mode on Phones - 3 COLUMNS */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .menu-items {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 12px !important;
+            }
+            
+            .cart-section {
+                max-height: 90vh;
+                overflow-y: auto;
+                position: sticky;
+                top: 10px;
+            }
+            
+            .menu-card img {
+                height: 100px;
+            }
+        }
+
+        /* Tablets (768px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .menu-items {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 15px;
+            }
+            
+            .container {
+                gap: 15px;
+                padding: 15px;
+            }
+        }
+
         /* Touch-friendly button sizes (minimum 44x44px) */
         button, 
         .add-btn, 
@@ -747,9 +807,26 @@
         button:active, 
         .add-btn:active, 
         .filter-btn:active,
-        .qty-btn:active {
+        .qty-btn:active,
+        .location-btn:active {
             transform: scale(0.97);
             transition: transform 0.05s;
+        }
+        
+        /* Loading animation for menu cards */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .menu-card {
+            animation: fadeIn 0.3s ease-out;
         }
     </style>
 </head>
