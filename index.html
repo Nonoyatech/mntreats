@@ -1040,14 +1040,15 @@ function getFilteredItems() {
 // Filter by category button
 function filterByCategory(category) {
     currentFilter = category;
-    currentSearch = document.getElementById('searchInput').value;
+    currentSearch = document.getElementById('searchInput')?.value || '';
     
     // Update active button styling
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
     });
+      if (event && event.target) {
     event.target.classList.add('active');
-    
+      }
     renderFilteredMenu();
 }
 
